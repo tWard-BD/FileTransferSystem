@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTransferSystem.Web", "FileTransferSystem.Web\FileTransferSystem.Web.csproj", "{529C4D9A-906E-42DC-8A24-5BD20E100620}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileTransferSystem.Web", "FileTransferSystem.Web\FileTransferSystem.Web.csproj", "{529C4D9A-906E-42DC-8A24-5BD20E100620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTransferSystem.Services", "FileTransferSystem.Services\FileTransferSystem.Services.csproj", "{20FDC0F7-7FA6-4D90-B376-1BB09F1C4166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileTransferSystem.Services", "FileTransferSystem.Services\FileTransferSystem.Services.csproj", "{20FDC0F7-7FA6-4D90-B376-1BB09F1C4166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTransferSystem.Common", "FileTransferSystem.Common\FileTransferSystem.Common.csproj", "{A5CE094C-91C2-4B12-B233-A4FD2FC74915}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{20FDC0F7-7FA6-4D90-B376-1BB09F1C4166}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20FDC0F7-7FA6-4D90-B376-1BB09F1C4166}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20FDC0F7-7FA6-4D90-B376-1BB09F1C4166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5CE094C-91C2-4B12-B233-A4FD2FC74915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CE094C-91C2-4B12-B233-A4FD2FC74915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CE094C-91C2-4B12-B233-A4FD2FC74915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CE094C-91C2-4B12-B233-A4FD2FC74915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
