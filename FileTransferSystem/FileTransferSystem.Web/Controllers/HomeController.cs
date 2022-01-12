@@ -1,21 +1,19 @@
-﻿using FileTransferSystem.Web.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using FileTransferSystem.Services.Services.Contracts;
+using FileTransferSystem.Web.Models;
 
 namespace FileTransferSystem.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMoveItApiClient apiClient;
+        
+        public HomeController(IMoveItApiClient apiClient)
         {
-            _logger = logger;
+            this.apiClient = apiClient;
         }
 
         public IActionResult Index()
@@ -23,9 +21,12 @@ namespace FileTransferSystem.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<IActionResult> Index(IFormFile file)
         {
-            return View();
+            string folderId = await this.apiClient.GetFolderId();
+            await this.apiClient.UploadFileToFolder(folderId, file);
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
