@@ -2,7 +2,7 @@
 
 namespace FileTransferSystem.Services.Models.MoveItApi
 {
-    public class Root
+    public class FolderList
     {
         public List<Item> Items { get; set; }
     }

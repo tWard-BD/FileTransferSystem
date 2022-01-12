@@ -2,17 +2,20 @@
     ViewData["Title"] = "Upload File to MOVE-IT";
 }
 
-<div class="container card mx-auto" style="width: 18rem;">
-    <p class="card-title">Upload a file to MOVE-IT</p>
-    <div class="card-body">
-        <form action="/" method="post" enctype="multipart/form-data">
-            <div class="row">
-                <label for="file">File to upload:</label>
-                <input type="file" name="file" />
-            </div>
-            <div class="row">
-                <input type="submit" name="name" value="Upload" />
-            </div>
-        </form>
+<div class="container d-flex justify-content-center" style="width: 18rem;">
+    <div>
+        <p>Upload a file to MOVE-IT</p>
+        <div>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <label for="file">File to upload:</label>
+                    <input type="file" name="file" />
+                </div>
+                <div class="row">
+                    <button class="btn-info" type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+

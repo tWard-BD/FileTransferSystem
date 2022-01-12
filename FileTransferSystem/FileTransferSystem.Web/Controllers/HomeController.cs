@@ -9,11 +9,11 @@ namespace FileTransferSystem.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IMoveItApiClient apiClient;
+        private readonly IMoveItApiClient _apiClient;
         
         public HomeController(IMoveItApiClient apiClient)
         {
-            this.apiClient = apiClient;
+            _apiClient = apiClient;
         }
 
         public IActionResult Index()
@@ -24,8 +24,14 @@ namespace FileTransferSystem.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(IFormFile file)
         {
-            string folderId = await this.apiClient.GetFolderId();
-            await this.apiClient.UploadFileToFolder(folderId, file);
+            if (file == null)
+            {
+                this.ModelState.AddModelError("Error", "Please select a file to upload");
+                
+            }
+
+            string folderId = await _apiClient.GetFolderId();
+            await _apiClient.UploadFileToFolder(folderId, file);
             return RedirectToAction("Index");
         }
 
